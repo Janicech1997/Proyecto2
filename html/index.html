@@ -144,40 +144,58 @@
             </div>
           </section>
           <section class="formulario">
-            <fieldset>
-                <legend>
-                  <h2>Pide tu servicio</h2>
-                </legend>
-                <form id="form">
-                  <input type="text" id="email" name="email" placeholder="Correo"><br><br>
-                  <input type="text" id="numero" name="numero" placeholder="Número de contacto"><br><br>
-                  <input type="text" id="haztupedido" name="haztupedido" placeholder="Haz tú pedido"><br><br>
-                  <input type="button" value="Enviar" id="btn" onclick="Enviar()">
-                  <input type="reset">
-                </form>
-              </fieldset>
-              <br>
-              <div id="msg"></div>
-              <fieldset >
-                <legend>
-                  <h2>Data from Local Storage</h2>
-                </legend>
-            
-                <table bord="2" id="table">
-                  <tr>
-                    <td class="col">Correo</td>
-                    <td class="col">Número de contacto</td>
-                    <td class="col">Pedido</td>
-                    <td class="col">Costo</td>
-                  </tr>
-                </table>
-              </fieldset>
+            <h1 class="formulariotexto">Cotiza tus servicios</h1>
+            <table>
+                <tr>
+                    <td>
+                        <form autocomplete="off" onsubmit="onFormSubmit()">
+                            <div class="formulita">
+                                <label for="correo">Correo electrónico</label>
+                                <input type="text" name="correo" id="correo">
+                            </div>
+                            <div>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre" id="nombre">
+                            </div>
+                            <div>
+                                <label for="productos">Producto</label>
+                                <input type="text" name="productos" id="productos">
+                            </div>
+                            <div>
+                                <label for="detalles">Especificaciones</label>
+                                <input type="text" name="detalles" id="detalles">
+                            </div>
+        
+                            <div class="form_action--button">
+                                <input type="submit" value="Submit">
+                                <input type="reset" value="Reset">
+                            </div>
+                        </form>
+        
+                        <td>
+                            <table class="list" id="storeList">
+                                <thead>
+                                    <tr>
+                                        <th>Correo electronico</th>
+                                        <th>Nombre</th>
+                                        <th>Productos</th>
+                                        <th>Especificaciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+        
+                                </tbody>
+                            </table>
+                        </td>
+                    </td>
+                </tr>
+            </table>
           </section>
 
     <footer class="footer">
         <section class="footer__container container">
             <nav class="nav nav--footer">
-                <h2 class="footer__title">Curso CSS.</h2>
+                <h2 class="footer__title">Para más información.</h2>
 
                 <ul class="nav__link nav__link--footer">
                     <li class="nav__items">
@@ -195,9 +213,9 @@
 
         <section class="footer__copy container">
             <div class="footer__social">
-                <a href="#" class="footer__icons"><img src="./images/facebook.svg" class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="./images/twitter.svg" class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="./images/youtube.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="../images/facebook.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="../images/twitter.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="../images/youtube.svg" class="footer__img"></a>
             </div>
 
             <h3 class="footer__copyright">Derechos reservados &copy; Janice Chen</h3>

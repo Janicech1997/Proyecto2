@@ -1,100 +1,72 @@
-// C R U D - Create Read Update Delete
+var selectedRow = null
 
-// Global
-var row = null;
-var msg = document.getElementById("msg");
+function onFormSubmit(e) {
+	event.preventDefault();
+        var formData = readFormData();
+        if (selectedRow == null){
+            insertNewRecord(formData);
+		}
+        else{
+            updateRecord(formData);
+		}
+        resetForm();    
+}
 
-// CREATE
-// Submit function
-function Enviar() {
-  var dataEntered = retrieveData();
-  var readData = readingDataFromLocalStorage(dataEntered);
-  if (dataEntered == false) {
-    msg.innerHTML = `<h3 style = "color: red;">Insertar datos !</h3>`;
-  } else {
-    if (row == null) {
-      insert(readData);
-      msg.innerHTML = `<h3 style = "color: yellow;">Ensertar datos !</h3>`;
-    } else {
-      update();
-      msg.innerHTML = `<h3 style = "color: orange;">Insertar datos !</h3>`;
+//Retrieve the data
+function readFormData() {
+    var formData = {};
+    formData["correo"] = document.getElementById("correo").value;
+    formData["nombre"] = document.getElementById("nombre").value;
+    formData["productos"] = document.getElementById("productos").value;
+    formData["detalles"] = document.getElementById("detalles").value;
+    return formData;
+}
+
+//Insert the data
+function insertNewRecord(data) {
+    var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.length);
+    cell1 = newRow.insertCell(0);
+		cell1.innerHTML = data.correo;
+    cell2 = newRow.insertCell(1);
+		cell2.innerHTML = data.nombre;
+    cell3 = newRow.insertCell(2);
+		cell3.innerHTML = data.productos;
+    cell4 = newRow.insertCell(3);
+		cell4.innerHTML = data.detalles;
+    cell4 = newRow.insertCell(4);
+        cell4.innerHTML = `<button onClick="onEdit(this)">Editar</button> <button onClick="onDelete(this)">Eliminar</button>`;
+}
+
+//Edit the data
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("correo").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("nombre").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("productos").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("detalles").value = selectedRow.cells[3].innerHTML;
+}
+function updateRecord(formData) {
+    selectedRow.cells[0].innerHTML = formData.correo;
+    selectedRow.cells[1].innerHTML = formData.nombre;
+    selectedRow.cells[2].innerHTML = formData.productos;
+    selectedRow.cells[3].innerHTML = formData.detalles;
+}
+
+//Delete the data
+function onDelete(td) {
+    if (confirm('Do you want to delete this record?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById('storeList').deleteRow(row.rowIndex);
+        resetForm();
     }
-  }
-
-  document.getElementById("form").reset();
 }
 
-// READ
-// Retrieve data
-function retrieveData() {
-  var email = document.getElementById("email").value;
-  var numero = document.getElementById("numero").value;
-  var haztupedido = document.getElementById("haztupedido").value;
-
-  var arr = [email, numero, haztupedido];
-  if (arr.includes("")) {
-    return false;
-  } else {
-    return arr;
-  }
-}
-
-//Data in Local Storage
-function readingDataFromLocalStorage(dataEntered) {
-  // Storing data in local storage
-  var n = localStorage.setItem("email", dataEntered[0]);
-  var j = localStorage.setItem("numero", dataEntered[1]);
-  var e = localStorage.setItem("haztupedido", dataEntered[2]);
-
-  // Show data in table (Getting item from localStorage)
-  var n1 = localStorage.getItem("email", n);
-  var j1 = localStorage.getItem("numero", j);
-  var e1 = localStorage.getItem("haztupedido", e);
-
-  var arr = [n1, j1, e1];
-  return arr;
-}
-
-// INSERT
-function insert(readData) {
-  var table = document.getElementById("table");
-  var i = table.rows.length;
-  var row = table.insertRow(i);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
-  // row.insertCell(4).innerHTML = "JJJ"
-  cell1.innerHTML = readData[0];
-  cell2.innerHTML = readData[1];
-  cell3.innerHTML = readData[2];
-  cell4.innerHTML = `<button onclick="edit(this)"><a href="script.js:void(0)" style="text-decoration: none;">Enviar</a></button> &nbsp
-<button onclick="remove(this)"><a href="script.js:void(0)" style="text-decoration: none;">Delete</a></button>`;
-}
-
-//EDIT
-function edit(td) {
-  row = td.parentElement.parentElement;
-  document.getElementById("email").value = row.cells[0].innerHTML;
-  document.getElementById("numero").value = row.cells[1].innerHTML;
-  document.getElementById("haztupedido").value = row.cells[2].innerHTML;
-}
-
-// UPDATE
-function update(td) {
-  row = td.parentElement.parentElement;
-  row.cells[0].innerHTML = document.getElementById("email").value;
-  row.cells[1].innerHTML = document.getElementById("numero").value;
-  row.cells[2].innerHTML = document.getElementById("haztupedido").value;
-  row = null;
-}
-
-// DELETE
-function remove(td) {
-  var ans = confirm("Estas seguro de eliminar?");
-  if (ans == true) {
-    var row = td.parentElement.parentElement;
-    document.getElementById("table").deleteRow(row.rowIndex);
-    msg.innerHTML = `<h3 style = "color: red;">Data Deleted !</h3>`;
-  }
+//Reset the data
+function resetForm() {
+    document.getElementById("correo").value = '';
+    document.getElementById("nombre").value = '';
+    document.getElementById("productos").value = '';
+    document.getElementById("detalles").value = '';
+    selectedRow = null;
 }
