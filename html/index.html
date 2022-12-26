@@ -94,6 +94,86 @@
                 </div>
             </section>
 
+            <Section class="contenido0" id="proyectos">
+                <div>
+                  <div class="Container">
+                    <h2 class="centrar-titulo">Proyectos realizados</h2>
+                      <div id="Panel_galeria">
+                        <div>
+                            <img src="../images/marca1.png" alt="fantasma" width="200" height="180">
+                            <label class="texto-proyecto">Proyecto 1</label>
+                        </div>
+                        <div>
+                            <img src="../images/marca2.png" alt="calabaza" width="200" height="180">
+                            <label class="texto-proyecto"><p>Proyecto 2</p></label>
+                        </div>
+                        <div>
+                            <img src="../images/marca3.png" alt="diseño" width="200" height="180">
+                            <label class="texto-proyecto"><p>Proyecto 3</p></label>
+                        </div>
+                      </div>     
+                  </div>
+                </div>
+            </Section>
+            
+        <section class="contact" id="contactos">
+            <div class="contact__image-wrapper">
+              <img src="https://signoscv.com/wp-content/uploads/2021/11/DW6.jpg" alt="">
+            </div>
+            <div class="contact__right-side">
+                <h1 class="contact__title">Contáctanos</h1>
+                <form action="" class="contact__form-wrapper">
+                    <div class="contact__input-line">
+                        <label for="name" class="contact__label">Nombre</label>
+                        <input type="text" name="name" id="name" class="contact__input">
+                    </div>
+                    <div class="contact__input-line">
+                        <label for="email" class="contact__label">Email</label>
+                        <input type="email" name="email" id="email" class="contact__input">
+                    </div>
+                    <div class="contact__input-line">
+                        <label for="subject" class="contact__label">Asunto</label>
+                        <input type="text" name="subject" id="subject" class="contact__input">
+                    </div>
+                    <div class="contact__input-line">
+                        <label for="message" class="contact__label">Mensaje</label>
+                        <textarea type="text" name="message" id="message" class="contact__input--textarea"></textarea>
+                    </div>
+                    <input type="submit" value="Enviar mensaje" class="contact__submit-button">
+                </form>
+            </div>
+          </section>
+          <section class="formulario">
+            <fieldset>
+                <legend>
+                  <h2>Pide tu servicio</h2>
+                </legend>
+                <form id="form">
+                  <input type="text" id="email" name="email" placeholder="Correo"><br><br>
+                  <input type="text" id="numero" name="numero" placeholder="Número de contacto"><br><br>
+                  <input type="text" id="haztupedido" name="haztupedido" placeholder="Haz tú pedido"><br><br>
+                  <input type="button" value="Enviar" id="btn" onclick="Enviar()">
+                  <input type="reset">
+                </form>
+              </fieldset>
+              <br>
+              <div id="msg"></div>
+              <fieldset >
+                <legend>
+                  <h2>Data from Local Storage</h2>
+                </legend>
+            
+                <table bord="2" id="table">
+                  <tr>
+                    <td class="col">Correo</td>
+                    <td class="col">Número de contacto</td>
+                    <td class="col">Pedido</td>
+                    <td class="col">Costo</td>
+                  </tr>
+                </table>
+              </fieldset>
+          </section>
+
     <footer class="footer">
         <section class="footer__container container">
             <nav class="nav nav--footer">
