@@ -22,19 +22,19 @@
 
             <ul class="nav__link nav__link--menu">
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Inicio</a>
+                    <a href="#inicio" class="nav__links">Inicio</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Sobre nosotros</a>
+                    <a href="#nosotros" class="nav__links">Sobre nosotros</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Productos</a>
+                    <a href="#productos" class="nav__links">Productos</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Contacto</a>
+                    <a href="#contactos" class="nav__links">Contacto</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Pide tu servicio</a>
+                    <a href="#formulario" class="nav__links">Pide tu servicio</a>
                 </li>
 
                 <img src="../images/Logo.png" class="nav__close">
@@ -45,21 +45,21 @@
             </div>
         </nav>
 
-        <section class="hero__container container">
+        <section class="hero__container container" id="inicio">
             <h1 class="hero__title">Únete al mundo digital</h1>
             <p class="hero__paragraph">Aumenta hoy mismo tús ventas junto a nosotros.</p>
-            <a href="#" class="cta">Contactanos</a>
+            <a href="#contactos" class="cta">Contactanos</a>
         </section>
     </header>
 
 
-        <section class="knowledge">
+        <section class="knowledge" id="nosotros">
             <div class="knowledge__container container">
                 <div class="knowledege__texts">
                     <h2 class="subtitle">¿Quiénes somos?</h2>
                     <p class="knowledge__paragraph">"Nuestro equipo se dedica a la tecnología y el diseño aportando habilidades más allá de lo común en cada proyecto.
                         Nos asociamos estrechamente con nuestros clientes para convertirnos en un asesor confiable y una extensión de su negocio, generando resultados digitales asombrosos. Nuestra misión es crear sitios web impresionantes y profesionales con UI / UX excepcionales y estrategias brillantes de SEO, PPC y Inbound Marketing enfocadas en la industria B2B.</p>
-                    <a href="#" class="cta">Pide tu servicio</a>
+                    <a href="#formulario" class="cta">Pide tu servicio</a>
                 </div>
 
                 <figure class="knowledge__picture">
@@ -69,7 +69,7 @@
         </section>
 
         <main>
-            <section class="container about">
+            <section class="container about" id="productos">
                 <h2 class="subtitle">Servicios</h2>
                 <p class="about__paragraph">Mira los servicios que brindamos en nuestra empresa.</p>
     
@@ -139,29 +139,30 @@
                         <label for="message" class="contact__label">Mensaje</label>
                         <textarea type="text" name="message" id="message" class="contact__input--textarea"></textarea>
                     </div>
-                    <input type="submit" value="Enviar mensaje" class="contact__submit-button">
+                    <a href="#formulario" class="cta">Pide tu servicio</a>
+                    
                 </form>
             </div>
           </section>
-          <section class="formulario">
+          <section class="formulario" id="formulario">
             <h1 class="formulariotexto">Cotiza tus servicios</h1>
             <table>
-                <tr>
+                <tr class="formu">
                     <td>
                         <form autocomplete="off" onsubmit="onFormSubmit()">
-                            <div class="formulita">
+                            <div class="contact__input-line">
                                 <label for="correo">Correo electrónico</label>
                                 <input type="text" name="correo" id="correo">
                             </div>
-                            <div>
+                            <div class="contact__input-line">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name="nombre" id="nombre">
                             </div>
-                            <div>
-                                <label for="productos">Producto</label>
-                                <input type="text" name="productos" id="productos">
+                            <div class="contact__input-line">
+                                <label for="product">Producto</label>
+                                <input type="text" name="product" id="product">
                             </div>
-                            <div>
+                            <div class="contact__input-line">
                                 <label for="detalles">Especificaciones</label>
                                 <input type="text" name="detalles" id="detalles">
                             </div>
@@ -193,29 +194,11 @@
           </section>
 
     <footer class="footer">
-        <section class="footer__container container">
-            <nav class="nav nav--footer">
-                <h2 class="footer__title">Para más información.</h2>
-
-                <ul class="nav__link nav__link--footer">
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">Inicio</a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">Acerca de</a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">Contacto</a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-
         <section class="footer__copy container">
             <div class="footer__social">
-                <a href="#" class="footer__icons"><img src="../images/facebook.svg" class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="../images/twitter.svg" class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="../images/youtube.svg" class="footer__img"></a>
+                <a href="https://www.facebook.com/" class="footer__icons"><img src="../images/facebook.svg" class="footer__img"></a>
+                <a href="https://twitter.com/?lang=es" class="footer__icons"><img src="../images/twitter.svg" class="footer__img"></a>
+                <a href="https://www.youtube.com/" class="footer__icons"><img src="../images/youtube.svg" class="footer__img"></a>
             </div>
 
             <h3 class="footer__copyright">Derechos reservados &copy; Janice Chen</h3>

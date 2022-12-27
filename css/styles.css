@@ -333,7 +333,7 @@ body {
 /* Formulario*/
 
 .formulario {
-    background-color: #c48fec;
+    background-color: #caace1;
     padding-top: 30px;
     padding-bottom: 20px;
 }
@@ -344,21 +344,24 @@ body {
 table{
     width: 80%;
     margin: 40px auto;
-    background: rgb(225, 157, 218);
+    background: rgb(227, 204, 225);
+    padding: 20px;
 }
 table.list{
     text-align: center;
     width: 100%;
 }
 td{
-    border: 1px solid rgb(204,200,200);
+    border: 1px solid rgb(255, 237, 237);
     text-align: left;
     padding: 8px 15px;
 }
+
 tr:nth-child(even), table.list thread> tr{
-    background-color: rgb(204,200,200);
+    background-color: rgb(245, 190, 190);
 }
-.formulita[type="text"],input[type="number"]{
+
+.formulita[type="text"]{
     width:91%;
     padding:12px 20px;
     margin:8px 0;
@@ -368,6 +371,17 @@ tr:nth-child(even), table.list thread> tr{
 }
 
 .formulita[type="submit"],input[type="reset"]{
+    background: #eee;
+    padding:6px 12px;
+    margin:15px 0 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+.formulita[type="reset"],input[type="submit"]{
     background: #eee;
     padding:6px 12px;
     margin:15px 0 10px;
@@ -466,23 +480,6 @@ button:hover{
         justify-self: center;
     }
 
-    .testimony__container{
-        grid-template-columns: 30px 1fr 30px;
-    }
-
-    .testimony__body{
-        grid-template-columns: 1fr;
-        grid-template-rows: max-content max-content;
-        gap: 3em;
-        justify-items:center ;
-    }
-
-
-    .testimony__img{
-        width: 200px;
-        height: 200px;
-        
-    }
 
     .questions__copy{
         width: 100%;
