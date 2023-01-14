@@ -39,9 +39,10 @@ function insertNewRecord(formData){
     cell4 = newRow.insertCell(3);
     cell4.innerHTML = formData.Especificaciones;
     cell5 = newRow.insertCell(4);
-    cell5.innerHTML = `<a onClick=editForm(this)>Edit</a><a onClick=deleteRecord(this)>Delete</a>`
+    cell5.innerHTML = `<a onClick=editForm(this)>Editar</a><a onClick=deleteRecord(this)>Eliminar</a>`
     employees.push(formData);
     localStorage.setItem("employees",JSON.stringify(employees));
+    console.log(localStorage.getItem("employees"));
 }
 function resetForm(){
     document.getElementById("Nombre").value = "";
@@ -58,6 +59,7 @@ function deleteRecord(a){
         localStorage.setItem("employees",JSON.stringify(employees));
 
     }
+    console.log(localStorage.getItem("employees"));
 }
 function editForm(a){
     selectRow = a.parentElement.parentElement;
@@ -73,6 +75,7 @@ function updateRecord(formData){
     selectRow.cells[3].innerHTML = formData.Especificaciones;
     employees.splice(selectRow.rowIndex-1,1,{Nombre:formData.Nombre,Email:formData.Email,Producto:formData.Producto,Especificaciones:formData.Especificaciones});
     localStorage.setItem("employees",JSON.stringify(employees));
+    console.log(localStorage.getItem("employees"));
 }
 function validate(){
     isValid = true;
